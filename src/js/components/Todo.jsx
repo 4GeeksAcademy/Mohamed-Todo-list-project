@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/index.css";
+import { FaTrash } from "react-icons/fa";
 
 function Todo() {
     const [inputText, setInputText] = useState("");
@@ -17,12 +18,25 @@ function Todo() {
         setInputText("");
     }
 
+    function handleKey(event) {
+        if (event.key === "Enter") {
+            addItem();
+        }
+    }
+
+    function removeItem(index) {
+        setItems((prevItems) => {
+            return prevItems.filter((item, i) => i !== index);
+        });
+    }
+
     return (
         <div className="todo-container">
             <h1 className="todo-header">Todo List</h1>
             <div className="todo-input-container">
                 <input
                     onChange={handleChange}
+                    onKeyDown={handleKey} 
                     type="text"
                     placeholder="Type your todos"
                     value={inputText}
@@ -36,6 +50,12 @@ function Todo() {
                 {items.map((item, index) => (
                     <li key={index} className="todo-item">
                         {item}
+                        <button
+                            onClick={() => removeItem(index)}
+                            className="remove-button"
+                        >
+                           <FaTrash/>
+                        </button>
                     </li>
                 ))}
             </ul>
