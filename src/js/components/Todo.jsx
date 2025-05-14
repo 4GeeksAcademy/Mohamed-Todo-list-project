@@ -32,7 +32,7 @@ function Todo() {
 
     return (
         <div className="todo-container">
-            <h1 className="todo-header">Todo List</h1>
+            <h3 className="todo-header">Todo List</h3>
             <div className="todo-input-container">
                 <input
                     onChange={handleChange}
@@ -43,7 +43,7 @@ function Todo() {
                     className="todo-input"
                 />
                 <button onClick={addItem} type="submit" className="todo-button">
-                    Save Todo
+                    Add 
                 </button>
             </div>
             <ul className="todo-list">
