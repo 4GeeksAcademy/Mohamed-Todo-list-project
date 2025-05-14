@@ -80,3 +80,9 @@
 .remove-button:hover {
     background-color: #c82333;
 }
+.no-tasks-message {
+    text-align: center;
+    color: #888;
+   
+    padding: 10px;
+}

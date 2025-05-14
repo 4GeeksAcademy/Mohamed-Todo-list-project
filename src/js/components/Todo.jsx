@@ -46,8 +46,11 @@ function Todo() {
                     Add 
                 </button>
             </div>
-            <ul className="todo-list">
-                {items.map((item, index) => (
+           <ul className="todo-list">
+            {items.length === 0 ? (
+                <li className="no-tasks-message">No tasks, add a task</li>
+            ) : (
+                items.map((item, index) => (
                     <li key={index} className="todo-item">
                         {item}
                         <button
@@ -57,8 +60,9 @@ function Todo() {
                            <FaTrash/>
                         </button>
                     </li>
-                ))}
-            </ul>
+                ))
+            )}
+        </ul>
         </div>
     );
 }
