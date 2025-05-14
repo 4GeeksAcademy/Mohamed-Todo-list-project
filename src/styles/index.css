@@ -53,27 +53,28 @@
 }
 
 .todo-item {
+    position: relative;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f8f9fa;
     padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    
-    font-size: 1rem;
-    color: #333;
+    border-bottom: 1px solid #ccc;
 }
 
 .remove-button {
-    padding: 5px 10px;
-    background-color: #dc3545;
-    color: #fff;
+    display: none;
+    background: none;
     border: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
+    color: red;
     cursor: pointer;
-   
+}
+
+.todo-item:hover .remove-button{
+    
+   display: contents;
 }
 
 .remove-button:hover {
